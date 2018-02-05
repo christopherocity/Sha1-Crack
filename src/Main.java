@@ -11,6 +11,7 @@ public class Main {
     }
     private static String gen() {
         StringBuilder pass = new StringBuilder();
+        System.out.println("decrypting....");
 
         for(int i = 0; i < 4; i++) {
             for(int j = 0; j < charset.length(); j++) {
@@ -23,7 +24,6 @@ public class Main {
                             pass.append(charset.charAt(l));
                             pass.append(charset.charAt(m));
                             pass.append("-");
-
                             if(sha.equals(encryptPassword(pass.toString()))) {
                                 return pass.toString();
                             }
@@ -33,6 +33,8 @@ public class Main {
                 }
             }
         }
+
+
         return pass.toString();
     }
 
